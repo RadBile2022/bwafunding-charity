@@ -1,4 +1,5 @@
 <script>
+	import CharityList from "./CharityList.svelte";
 	let title = "Charity";
 	setTimeout(function(){
 		title = "Donation"
@@ -7,6 +8,7 @@
 
 <main>
 	<h1>{title}</h1>
+	<CharityList/>
 </main>
 
 <style>
