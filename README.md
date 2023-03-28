@@ -1,3 +1,13 @@
+#Catatan :
+##2.4 Komunikasi antar Komponen (export let);
+a. App.svelte disebut [statefull] atau punya state yaitu : title, dan CharityList;
+b. CharityList tidak punya local state atau [stateless];
+c. Tugas stateless hanya menampilkan data yang diberikan induknya [App.svelte];
+d. Best practice memisahkan komponenen stateful [terdapat bisnis proses] stateless [hanya menampilkan];
+e. Stateless [packages-components] Statefull [packages-page] sementara di Home.svelte; 
+f. [App.svelte] tetap menjadi end-point dari main.js;
+
+
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
 ---
