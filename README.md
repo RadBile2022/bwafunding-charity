@@ -1,14 +1,23 @@
 # Catatan :
-## 2.4 Komunikasi antar Komponen (export let);
-a. App.svelte disebut [statefull](https://svelte.dev) atau punya state yaitu : title, dan CharityList;
-b. CharityList tidak punya local state atau [stateless](https://svelte.dev);
-c. Tugas stateless hanya menampilkan data yang diberikan induknya [App.svelte](https://svelte.dev);
-d. Best practice memisahkan komponenen stateful [terdapat bisnis proses](https://svelte.dev) stateless [hanya menampilkan](https://svelte.dev);
-e. Stateless [packages-components]() Statefull [packages-page]() sementara di Home.svelte; 
-f. [App.svelte]() tetap menjadi end-point dari main.js;
+## 2.4 Komunikasi antar Komponen [export let]();
+- a. App.svelte disebut [statefull]() atau punya state yaitu : title, dan CharityList;
+- b. CharityList tidak punya local state atau [stateless]();
+- c. Tugas stateless hanya menampilkan data yang diberikan induknya [App.svelte]();
+- d. Best practice memisahkan komponenen stateful [terdapat bisnis proses]() stateless [hanya menampilkan]();
+- e. Stateless [packages-components]() Statefull [packages-page]() sementara di Home.svelte; 
+- f. [App.svelte]() tetap menjadi end-point dari main.js;
 
 ## 2.5 Bahasa Template Svelte
-a. HTML belum bisa membuat perulangan [each]() maupun conditional [if/else]()
+- a. HTML belum bisa membuat perulangan [each]() maupun conditional [if/else]();
+
+## 2.6 Menampilkan 'Dummy Data'
+- a. Data yang dibutuhkan : `id`, `title`, `category`, `thumbnail`, `pedged`,
+            `target`, `date_end`, `profile_photo`, `profile_name`, `no_pledges`;
+- b. Tidak ada relasional table;
+
+
+
+
 
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 

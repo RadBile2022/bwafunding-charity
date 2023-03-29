@@ -9,7 +9,7 @@
 
     <ul>
         {#each charities as charity}
-            <li>{charity}</li>
+            <li>{charity.title} - {charity.category}</li>
         {/each}
     </ul>
     {:else}
