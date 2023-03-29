@@ -45,6 +45,15 @@
 ## 3.1 Membangun Halaman About dan Contact
 1. Dalam membangun `statefull` mendapat bantuan `stateless` dari `Header` dan `Footer`;
 
+## 3.2 Menggunakar Routing Library page.js
+1. $ npm install page
+2. import router from 'page';
+3. let page;
+4. router('/',()=>(page= Home));
+5. router.start();
+6. <svelte:component this={page}/>
+7. package.json ubah : "start": "sirv public --single"
+
 
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
