@@ -61,6 +61,11 @@
 	},()=>(page = Donation));
 	router.start();
 
+## 3.4 Membangun Halaman Not Found
+1. Buat Halaman Not Found terlebih dahulu;
+2. router('/*',()=>(page=NotFound));
+3. router.start();
+
 
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
