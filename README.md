@@ -7,6 +7,14 @@
 4. Version Control System dengan [Git dan Github](); 
 5. Countinous Deployment [Netlify] (https://www.netlify.com/);
 
+## 2.1 Membuat Komponen Svelte
+1. Membuat `satu file` svelte;
+
+## 2.2 Membuat Komponen Bersarang
+1. Terdapat `if/else` `each`
+
+## 2.3 Menulis CSS di svelte
+
 ## 2.4 Komunikasi antar Komponen [(export let)]();
 1. App.svelte disebut [statefull]() atau punya state yaitu : title, dan CharityList;
 2. CharityList tidak punya local state atau [stateless]();
@@ -27,11 +35,16 @@
 2. Konfigurasi dan menyesuaikan `Mockup Data` menjadi `Dummy Data`;
 3. Tambahkan function`calculateFunded(pledged,target)`, `formatCurrency(nominal)`, `calculateDaysRemaining(end_date)`;
 
-## 2.8 `Slot` memudahkan memasangkan komponen lain, `children-componen` istilah pada react,  untuk menangani iterasi modal `charity`;
+## 2.8 `Slot` memudahkan memasangkan komponen lain, `children-componen` istilah pada react,  untuk menangani iterasi modal `charity`
 
-## 2.9 `Event` di Svelte untuk mentriger `Modal`;
+## 2.9 `Event` di Svelte untuk mentriger `Modal`
 1. Hilangkan atribut `aria-hidden=true`, ubah dengan `{#if isModalOpen === true}`;
 2. Buat event function `handleButton` dan `handleCloseModal`;
+
+
+## 3.1 Membangun Halaman About dan Contact
+1. Dalam membangun `statefull` mendapat bantuan `stateless` dari `Header` dan `Footer`;
+
 
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
