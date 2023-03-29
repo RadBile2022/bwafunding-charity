@@ -26,7 +26,7 @@
 1. Membuat Components : `CharityList`,`Header`,`Footer`,`Welcome`,`Promo` dari Mock Up BWA;
 2. Konfigurasi dan menyesuaikan `Mockup Data` menjadi `Dummy Data`;
 
-
+## 2.8 `Slot` memudahkan memasangkan komponen lain, `children-componen` istilah pada react,  untuk menangani iterasi modal `charity`;
 
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
