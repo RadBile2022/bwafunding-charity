@@ -1,21 +1,30 @@
 # Catatan :
-## 2.4 Komunikasi antar Komponen [export let]();
-- a. App.svelte disebut [statefull]() atau punya state yaitu : title, dan CharityList;
-- b. CharityList tidak punya local state atau [stateless]();
-- c. Tugas stateless hanya menampilkan data yang diberikan induknya [App.svelte]();
-- d. Best practice memisahkan komponenen stateful [terdapat bisnis proses]() stateless [hanya menampilkan]();
-- e. Stateless [packages-components]() Statefull [packages-page]() sementara di Home.svelte; 
-- f. [App.svelte]() tetap menjadi end-point dari main.js;
+
+## 1.0 Persiapan
+1. Instalasi alat : Node.js, vscode, postman, dsb;
+2. Generate [npm create svelte@latest myapp]() konifurasi semua sampai running;
+3. Struktur Folder Project
+4. Version Control System dengan [Git dan Github](); 
+5. Countinous Deployment [Netlify] (https://www.netlify.com/);
+
+## 2.4 Komunikasi antar Komponen [(export let)]();
+1. App.svelte disebut [statefull]() atau punya state yaitu : title, dan CharityList;
+2. CharityList tidak punya local state atau [stateless]();
+3. Tugas stateless hanya menampilkan data yang diberikan induknya [App.svelte]();
+4. Best practice memisahkan komponenen stateful [terdapat bisnis proses]() stateless [hanya menampilkan]();
+5. Stateless [packages-components]() Statefull [packages-page]() sementara di Home.svelte; 
+6. [App.svelte]() tetap menjadi end-point dari main.js;
 
 ## 2.5 Bahasa Template Svelte
-- a. HTML belum bisa membuat perulangan [each]() maupun conditional [if/else]();
+1. HTML belum bisa membuat perulangan [each]() maupun conditional [if/else]();
 
 ## 2.6 Menampilkan 'Dummy Data'
-- a. Data yang dibutuhkan : `id`, `title`, `category`, `thumbnail`, `pedged`,
-            `target`, `date_end`, `profile_photo`, `profile_name`, `no_pledges`;
-- b. Tidak ada relasional table;
+1. Data yang dibutuhkan : `id`, `title`, `category`, `thumbnail`, `pedged`,`target`, `date_end`, `profile_photo`, `profile_name`, `no_pledges`;
+2. Tidak ada relasional table;
 
-
+## 2.7 HTML Template ke Komponen Svelte
+1. Membuat Components : `CharityList`,`Header`,`Footer`,`Welcome`,`Promo` dari Mock Up BWA;
+2. Konfigurasi dan menyesuaikan `Mockup Data` menjadi `Dummy Data`;
 
 
 
