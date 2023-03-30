@@ -54,9 +54,9 @@
                     raise capital from anyone.</p>
             </div><!-- .xs-heading-title END -->
         </div><!-- .row end -->
-        {#if charities !== undefined}
-        {#each charities as charity}
         <div class="row">
+            {#each charities as charity}
+
             <div class="col-lg-4 col-md-6">
                 {#if isModalOpen ===true}
                 <Modal>
@@ -103,7 +103,7 @@
             </div>
                 </Modal>
                 {/if}
-               
+
                 <div class="xs-popular-item xs-box-shadow">
                     <div class="xs-item-header">
 
@@ -144,16 +144,15 @@
                         <span class="xs-separetor"></span>
 
                         <a href="/donation/{charity.id}" data-toggle="modal" data-target="#exampleModal"
-                            
+
                             class="btn btn-primary btn-block">
                             Donate This Cause
                     </a>
                     </div><!-- .xs-item-content END -->
                 </div><!-- .xs-popular-item END -->
             </div>
+            {/each}
         </div><!-- .row end -->
-        {/each}
-        {/if}
     </div><!-- .container end -->
 </section><!-- End popularCauses section -->
 

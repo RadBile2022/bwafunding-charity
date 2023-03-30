@@ -1,31 +1,21 @@
 <script>
     import Footer from "../components/Footer.svelte";
     import Header from "../components/Header.svelte";
-    import {charities} from '../data/charities.js';
+    // import {charities} from '../charity/charities.js';
     import {onDestroy, onMount} from "svelte";
 
     export let params;
-    let data, seconds=0 ;
-    function getCharity(id){
-        return charities.find(function(charity){
-            return charity.id === parseInt(id);
-        })
+    let charity;
+    async function getCharity(id){
+        const res = await fetch(`http://localhost:3000/charities/${id}`);
+        return res.json();
     }
-    onMount(function (){
-        setTimeout(function (){
-            data = getCharity(params.id);
-        }, 2500);
+
+    onMount(async function (){
+        charity = await getCharity(params.id);
+        console.log(charity)
     });
 
-    const tick = setInterval(function (){
-        seconds += 1;
-        console.log(seconds)
-        },1000);
-
-    onDestroy(function (){
-        console.log('onDestroy')
-        clearInterval(tick);
-    })
 </script>
 
 <style>
@@ -48,7 +38,7 @@
 
 <Header />
 
-{#if data}
+{#if charity}
 
 <!-- welcome section -->
 <!--breadcumb start here-->
@@ -58,7 +48,7 @@
     <div class="container">
         <div class="color-white xs-inner-banner-content">
             <h2>Donate Now</h2>
-            <p>{data.title}</p>
+            <p>{charity.title}</p>
             <ul class="xs-breadcumb">
                 <li class="badge badge-pill badge-primary">
                     <a href="/" class="color-white">Home /</a> Donate
@@ -76,7 +66,7 @@
                 <div class="col-lg-6">
                     <div class="xs-donation-form-images">
                         <img
-                            src="{data.thumbnail}"
+                            src="{charity.thumbnail}"
                             class="img-responsive"
                             alt="Family Images"
                         />
@@ -85,7 +75,7 @@
                 <div class="col-lg-6">
                     <div class="xs-donation-form-wraper">
                         <div class="xs-heading xs-mb-30">
-                            <h2 class="xs-title">{data.title}</h2>
+                            <h2 class="xs-title">{charity.title}</h2>
                             <p class="small">
                                 To learn more about make donate charity with us
                                 visit our "<span class="color-green"
