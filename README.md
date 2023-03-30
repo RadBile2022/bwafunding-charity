@@ -154,8 +154,33 @@
 ```
 
 ## 4.3 Event dan Data Binding
+1. `on:click|preventDefault`
+2. `on:submit`
+3. `on:bind`
+4. dst
 
+## 4.4 Mengirim Data ke API
+```
+ async function handleForm(event){
+     charity.pledged = charity.pledged + + parseInt(amount);
+     console.log(charity)
+     try {
+         const res = await fetch(`http://localhost:3000/charities/${params.id}`,{
+             method: 'PUT',
+             headers : {
+                 'content-type' : 'application/json'
+             },
+             body : JSON.stringify(charity)
+         });
+         console.log(res)
+         // redirection
+         router.redirect("/success");
 
+     }catch (error){
+         console.log(error);
+     }
+ }
+```
 
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 

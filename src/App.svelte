@@ -6,6 +6,7 @@
     import Contact from "./pages/Contact.svelte";
 	import Donation from './pages/Donation.svelte';
 	import NotFound from './pages/NotFound.svelte';
+    import Success from "./pages/Success.svelte";
 
 	let page,params;
 
@@ -16,6 +17,8 @@
 		params = ctx.params;
 		next();
 	},()=>(page = Donation));
+    router('/success',()=>(page=Success))
+
 	router('/*',()=>(page=NotFound));
 
 	router.start();

@@ -3,6 +3,7 @@
     import Header from "../components/Header.svelte";
     // import {charities} from '../charity/charities.js';
     import {onDestroy, onMount} from "svelte";
+    import router from "page";
 
     export let params;
     let charity, amount, name, email, agree=false;
@@ -17,10 +18,26 @@
     });
  function handleButtonClick (){
      console.log('Hello World !')
- }
- function handleForm(event){
-     event.preventDefault();
-     console.log('Hallo Dek')
+    }
+ async function handleForm(event){
+     charity.pledged = charity.pledged + + parseInt(amount);
+     console.log(charity)
+     try {
+         const res = await fetch(`http://localhost:3000/charities/${params.id}`,{
+             method: 'PUT',
+             headers : {
+                 'content-type' : 'application/json'
+             },
+             body : JSON.stringify(charity)
+         });
+         console.log(res)
+         // redirection
+         router.redirect("/success");
+
+     }catch (error){
+         console.log(error);
+     }
+
  }
 </script>
 
@@ -93,7 +110,7 @@
                             <span class="xs-separetor v2" />
                         </div>
                         <!-- .xs-heading end -->
-                        <form on:submit={handleForm}
+                        <form on:submit|preventDefault={handleForm}
                             action="#"
                             method="post"
                             id="xs-donation-form"
@@ -110,6 +127,7 @@
                                     type="text"
                                     name="name"
                                     id="xs-donate-name"
+                                    required
                                     class="form-control"
                                     bind:value="{amount}"
                                     placeholder="Your Donation in Rupiah"
@@ -127,6 +145,7 @@
                                     id="xs-donate-name"
                                     bind:value="{name}"
                                     class="form-control"
+                                    required
                                     placeholder="Your awesome name"
                                 />
                             </div>
@@ -141,6 +160,7 @@
                                 <input
                                     type="email"
                                     name="email"
+                                    required
                                     bind:value="{email}"
                                     id="xs-donate-email"
                                     class="form-control"
@@ -153,7 +173,8 @@
                                     type="checkbox"
                                     name="agree"
                                     id="xs-donate-agree"
-                                    bind:value="{agree}"
+                                    bind:checked="{agree}"
+                                    required
                                 />
                                 <label for="xs-donate-agree"
                                     >I Agree <span class="color-light-red"
@@ -161,12 +182,13 @@
                                     ></label
                                 >
                             </div>
-
-                            <button type="submit" on:click|once={handleButtonClick} class="btn btn-warning"
-                                ><span class="badge"
-                                    ><i class="fa fa-heart" /></span
-                                > Donate now</button
+                            <button type="submit" disabled="{!agree}" class="btn btn-warning"                                >
+                                     <span class="badge"
+                                     ><i class="fa fa-heart" /></span
+                                     > Donate now
+                               </button
                             >
+
                         </form>
                         <!-- .xs-donation-form #xs-donation-form END -->
                     </div>
