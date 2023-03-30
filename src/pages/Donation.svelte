@@ -2,16 +2,30 @@
     import Footer from "../components/Footer.svelte";
     import Header from "../components/Header.svelte";
     import {charities} from '../data/charities.js';
+    import {onDestroy, onMount} from "svelte";
 
     export let params;
-    let data ;
+    let data, seconds=0 ;
     function getCharity(id){
         return charities.find(function(charity){
             return charity.id === parseInt(id);
         })
     }
+    onMount(function (){
+        setTimeout(function (){
+            data = getCharity(params.id);
+        }, 2500);
+    });
 
-   data = getCharity(params.id);
+    const tick = setInterval(function (){
+        seconds += 1;
+        console.log(seconds)
+        },1000);
+
+    onDestroy(function (){
+        console.log('onDestroy')
+        clearInterval(tick);
+    })
 </script>
 
 <style>

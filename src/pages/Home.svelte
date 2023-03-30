@@ -5,7 +5,7 @@
 	import Footer from "../components/Footer.svelte";
 	import {charities} from "../data/charities.js";
     import Welcome from "../components/Welcome.svelte";
-	
+
 	let title = "Charity";
 </script>
 <Header/>
@@ -13,4 +13,4 @@
 <CharityList {charities}/>
 
 <Promo/>
-	<Footer/>	
+	<Footer/>

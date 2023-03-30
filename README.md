@@ -15,7 +15,7 @@
 
 ## 2.3 Menulis CSS di svelte
 
-## 2.4 Komunikasi antar Komponen [(export let)]();
+## 2.4 Komunikasi antar Komponen [export let]
 1. App.svelte disebut [statefull]() atau punya state yaitu : title, dan CharityList;
 2. CharityList tidak punya local state atau [stateless]();
 3. Tugas stateless hanya menampilkan data yang diberikan induknya [App.svelte]();
@@ -66,6 +66,12 @@
 2. router('/*',()=>(page=NotFound));
 3. router.start();
 
+
+## 4.1 Siklus Hidup Komponen Svelte [LifeCycle Svelte]
+1. `onMount` akan dieksekusi apabila komponen bisa dirender;
+2. `onDestroy` akan dieksekusi apabila komponen dihancurkan;
+3. `beforeUpdate` akan dieksekusi sebelum DOM di update;
+4. `afterUpdate`akan dieksekusi setelah DOM di update;
 
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
