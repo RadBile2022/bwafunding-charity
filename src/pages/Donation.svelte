@@ -5,7 +5,7 @@
     import {onDestroy, onMount} from "svelte";
 
     export let params;
-    let charity;
+    let charity, amount, name, email, agree=false;
     async function getCharity(id){
         const res = await fetch(`http://localhost:3000/charities/${id}`);
         return res.json();
@@ -15,7 +15,13 @@
         charity = await getCharity(params.id);
         console.log(charity)
     });
-
+ function handleButtonClick (){
+     console.log('Hello World !')
+ }
+ function handleForm(event){
+     event.preventDefault();
+     console.log('Hallo Dek')
+ }
 </script>
 
 <style>
@@ -39,7 +45,6 @@
 <Header />
 
 {#if charity}
-
 <!-- welcome section -->
 <!--breadcumb start here-->
 <section    class="xs-banner-inner-section parallax-window"
@@ -88,7 +93,7 @@
                             <span class="xs-separetor v2" />
                         </div>
                         <!-- .xs-heading end -->
-                        <form
+                        <form on:submit={handleForm}
                             action="#"
                             method="post"
                             id="xs-donation-form"
@@ -106,10 +111,10 @@
                                     name="name"
                                     id="xs-donate-name"
                                     class="form-control"
-                                    placeholder="Minimum of $5"
+                                    bind:value="{amount}"
+                                    placeholder="Your Donation in Rupiah"
                                 />
                             </div>
-
                             <div class="xs-input-group">
                                 <label for="xs-donate-name"
                                     >Your Name<span
@@ -120,6 +125,7 @@
                                     type="text"
                                     name="name"
                                     id="xs-donate-name"
+                                    bind:value="{name}"
                                     class="form-control"
                                     placeholder="Your awesome name"
                                 />
@@ -135,6 +141,7 @@
                                 <input
                                     type="email"
                                     name="email"
+                                    bind:value="{email}"
                                     id="xs-donate-email"
                                     class="form-control"
                                     placeholder="email@awesome.com"
@@ -146,6 +153,7 @@
                                     type="checkbox"
                                     name="agree"
                                     id="xs-donate-agree"
+                                    bind:value="{agree}"
                                 />
                                 <label for="xs-donate-agree"
                                     >I Agree <span class="color-light-red"
@@ -154,7 +162,7 @@
                                 >
                             </div>
 
-                            <button type="submit" class="btn btn-warning"
+                            <button type="submit" on:click|once={handleButtonClick} class="btn btn-warning"
                                 ><span class="badge"
                                     ><i class="fa fa-heart" /></span
                                 > Donate now</button
