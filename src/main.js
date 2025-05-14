@@ -1,4 +1,4 @@
-// import { createServer} from "miragejs";
+import { createServer} from "miragejs";
 import App from './App.svelte';
 
 const server = createServer();
